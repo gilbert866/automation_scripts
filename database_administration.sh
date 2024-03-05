@@ -17,6 +17,7 @@ if [ $sql_number -eq "1" ]; then
 	echo "                                  Select A Task"
 	echo "                                   1.Start MySQL"
 	echo "                                   2.Stop MySQL"
+	echo "                                   3.MySQL status"
 	echo "---------------------------------------------------------------------------------------"
 
 	read selection_number_1
@@ -27,6 +28,9 @@ if [ $sql_number -eq "1" ]; then
 
 	elif [ $selection_number_1 -eq "2" ]; then
 		eval "${mysql_stop}"
+		eval "${mysql_status}"
+
+	elif [ $selection_number_1 -eq "3" ]; then
 		eval "${mysql_status}"
 
 	else
@@ -41,9 +45,10 @@ elif [ $sql_number -eq "2" ]; then
 	postgresql_status="sudo systemctl status postgresql"
 
 	echo "-----------------------------------------------------------------------------------------"
-	echo "                                        Select A Task"
-	echo "                                          1.Start PostgreSQL"
-	echo "                                          2.Stop PostgreSQL"
+	echo "                                      Select A Task"
+	echo "                                       1.Start PostgreSQL"
+	echo "                                       2.Stop PostgreSQL"
+	echo "                                       3.PostgreSQL status"
 	echo "-----------------------------------------------------------------------------------------"
 
 	read selection_number_2
@@ -54,6 +59,9 @@ elif [ $sql_number -eq "2" ]; then
 
 	elif [ $selection_number_2 -eq "2" ]; then
 		eval "${postgresql_stop}"
+		eval "${postgresql_status}"
+
+	elif [ $selection_number_2 -eq "3" ]; then
 		eval "${postgresql_status}"
 
 	else
